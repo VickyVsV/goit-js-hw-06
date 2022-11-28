@@ -12,3 +12,30 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const listEl = document.querySelector(".gallery");
+
+
+//--------- 1-st method --------
+const imgEl = images.reduce((str, img) => 
+  str + `<li class = "gallery__item">
+  <img src = "${img.url}" alt = "${img.alt}" width = "350px"></li>`, ``);
+
+listEl.insertAdjacentHTML("afterbegin", imgEl);
+
+document.querySelector('.gallery')
+  .setAttribute('style', 'list-style: none; display: grid; justify-content: space-evenly; gap: 15px');
+
+//-------- 2-nd method --------
+// const imgEl = images.map((img) => 
+//   `<li class = "gallery__item"><img src=${img.url} alt="${img.alt}"></li>`);
+//
+//listEl.insertAdjacentHTML("afterbegin", imgEl);
+
+//------- 3-rd nethod ------------
+// const makeGalleryItemEl = ({ url, alt }) => {
+//   return `<li class = "gallery__item"><img width="400px"
+//   src = "${url}" alt = "${alt}"></li>`;
+// };
+// const makeGalleryNew = images.map(makeGalleryItemEl).join("");
+// listEl.insertAdjacentHTML("afterbegin", makeGalleryNew);
