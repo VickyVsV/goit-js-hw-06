@@ -8,9 +8,9 @@ inputEl.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
   inputEl = event.currentTarget.value;
-  // if (inputEl !== ' '){
-  //   outputEl.innerText = inputEl.trim();
-  // }
-  // else outputEl.innerText = 'Anonymous'
-  inputEl !== ' ' ? (outputEl.innerText = inputEl.trim()) : 'Anonymous';
+  if (inputEl !== ''){
+    outputEl.innerText = inputEl.trim();
+  }
+  else outputEl.innerText = 'Anonymous'
+  //inputEl !== "" ? (outputEl.innerText = inputEl.trim()) : 'Anonymous';
 }
